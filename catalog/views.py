@@ -1,12 +1,18 @@
 from django.shortcuts import render
 
-# Create your views here.
-
 def index(request):
+    """
+    Контроллер для отображения домашней страницы
+    :param request: параметры пользователя
+    """
     return render(request, 'catalog/index.html')
 
 
 def contact(request):
+    """
+    Контролеер для отображения страницы с контактами
+
+    """
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
