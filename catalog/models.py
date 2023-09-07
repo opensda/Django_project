@@ -1,5 +1,3 @@
-
-
 from django.db import models
 
 
@@ -8,6 +6,7 @@ NULLABLE = {"null": True, "blank": True}
 class Category(models.Model):
     category_name = models.CharField(max_length=100, verbose_name='имя')
     description = models.TextField(verbose_name='описание')
+    
 
 
     def __str__(self):
