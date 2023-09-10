@@ -4,13 +4,12 @@
         <header>
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 <h1 class="display-4 fw-normal text-body-emphasis">Товары</h1>
-                <p class="fs-5 text-body-secondary">Вы находитесь в разделе товары</p>
+                <p class="fs-5 text-body-secondary"></p>
             </div>
         </header>
         <main>
             <div class="row">
-                {% for product in objects_list %}
-                <div class="col-4">
+                <div class="col-12">
                     <div class="card" style="width: 100%;">
                         <img src="" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -20,7 +19,6 @@
                         </div>
                     </div>
                 </div>
-                {% endfor %}
 
             </div>
         </main>
