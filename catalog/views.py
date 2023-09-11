@@ -7,7 +7,8 @@ from catalog.models import Category, Product
 def index(request):
     products_list = Product.objects.all()
     context = {
-        'objects_list': products_list
+        'objects_list': products_list,
+        'title': 'SkyStore'
     }
     return render(request, 'catalog/index.html', context=context)
 
@@ -34,7 +35,18 @@ def contact(request):
     return render(request, 'catalog/contacts.html')
 
 
-def product(request, pk):
+def all_products(request):
+    print("All products view is called.")
+    products = Product.objects.all()
+    context = {
+        'products': products
+    }
+
+    return render(request, 'catalog/product.html', context=context)
+
+
+
+def product_by_pk(request, pk):
     product = Product.objects.get(pk=pk)
     context = {
         'product': product
