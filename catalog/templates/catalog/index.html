@@ -1,4 +1,5 @@
 {% extends "catalog/base.html" %}
+{% load my_tags %}
 {% block content %}
  <div class="container">
         <header>
@@ -12,10 +13,10 @@
                 {% for product in objects_list %}
                 <div class="col-4">
                     <div class="card" style="width: 100%;">
-                        <img src="" class="card-img-top" alt="...">
+                        <img src="{{ product.image|media_url }}" alt="" style="max-width: 10%;">
                         <div class="card-body">
-                            <h5 class="card-title">{{product.product_name}}</h5>
-                            <p class="card-text">{{product.description}}</p>
+                            <h5 class="card-title">{{product.product_name|truncatechars:100}}</h5>
+                            <p class="card-text">{{product.description|truncatechars:100}}</p>
                             <a href="/product/{{product.pk}}" class="btn btn-primary">Купить</a>
                         </div>
                     </div>

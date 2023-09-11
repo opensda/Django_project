@@ -9,7 +9,7 @@ def index(request):
     context = {
         'objects_list': products_list
     }
-    return render(request, 'catalog/index.html', context)
+    return render(request, 'catalog/index.html', context=context)
 
 
 
