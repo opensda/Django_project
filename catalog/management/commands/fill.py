@@ -26,3 +26,4 @@ class Command(BaseCommand):
         # Записываем данные
 
         Category.objects.bulk_create(category_to_fill)
+
