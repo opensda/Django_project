@@ -3,18 +3,23 @@ from catalog.models import Category, Product
 from django.views.generic import ListView, DetailView
 
 
-# class ProductListView(ListView):
-#     model = Product
-#     template_name = 'catalog/index.html'
+class ProductListView(ListView):
+    model = Product
+    template_name = 'catalog/index1.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 
-def index(request):
-    products_list = Product.objects.all()
-    context = {
-        'objects_list': products_list,
-        'title': 'SkyStore'
-    }
-    return render(request, 'catalog/index.html', context=context)
+
+# def index(request):
+#     products_list = Product.objects.all()
+#     context = {
+#         'objects_list': products_list,
+#         'title': 'SkyStore'
+#     }
+#     return render(request, 'catalog/index.html', context=context)
 
 
 
@@ -42,6 +47,7 @@ def all_products(request):
 
 
 
+
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'catalog/product.html'
@@ -53,3 +59,4 @@ class ProductDetailView(DetailView):
 #     }
 #
 #     return render(request, 'catalog/product.html', context=context)
+#
