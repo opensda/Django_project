@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from catalog.models import Category, Product
+from django.views.generic import ListView, DetailView
 
 
+# class ProductListView(ListView):
+#     model = Product
+#     template_name = 'catalog/index.html'
 
 
 def index(request):
@@ -13,13 +17,6 @@ def index(request):
     return render(request, 'catalog/index.html', context=context)
 
 
-
-# def index(request):
-#     """
-#     Контроллер для отображения домашней страницы
-#     :param request: параметры пользователя
-#     """
-#     return render(request, 'catalog/index.html')
 
 
 def contact(request):
@@ -36,20 +33,23 @@ def contact(request):
 
 
 def all_products(request):
-    print("All products view is called.")
     products = Product.objects.all()
     context = {
-        'products': products
+        'objects_list': products
     }
 
-    return render(request, 'catalog/product.html', context=context)
+    return render(request, 'catalog/all_products.html', context=context)
 
 
 
-def product_by_pk(request, pk):
-    product = Product.objects.get(pk=pk)
-    context = {
-        'product': product
-    }
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'catalog/product.html'
 
-    return render(request, 'catalog/product.html', context=context)
+# def product_by_pk(request, pk):
+#     product = Product.objects.get(pk=pk)
+#     context = {
+#         'product': product
+#     }
+#
+#     return render(request, 'catalog/product.html', context=context)
