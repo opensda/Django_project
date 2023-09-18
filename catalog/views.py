@@ -19,14 +19,14 @@ class ProductListView(ListView):
 #         'objects_list': products_list,
 #         'title': 'SkyStore'
 #     }
-#     return render(request, 'catalog/index.html', context=context)
+#     return render(request, 'catalog/index1.html', context=context)
 
 
 
 
 def contact(request):
     """
-    Контролеер для отображения страницы с контактами
+    Контроллер для отображения страницы с контактами
 
     """
     if request.method == 'POST':
