@@ -1,0 +1,26 @@
+{% extends "blog/base2.html" %}
+{% load my_tags %}
+{% block content %}
+    <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <button type="submit" class="btn btn-success"href="{% url 'blog:blog-create' %}">
+                                        {% if object %}
+                                            Сохранить
+                                        {% else %}
+                                        Создать пост
+                                        {% endif %}
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+        </main>
+    </div>
+{% endblock %}
+

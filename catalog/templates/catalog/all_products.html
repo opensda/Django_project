@@ -1,11 +1,24 @@
-{% extends "catalog/base.html" %}
 {% load my_tags %}
 {% block content %}
+    {% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Интернет-магазин</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+</head>
+<body>
  <div class="container">
         <header>
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 <h1 class="display-4 fw-normal text-body-emphasis">Товары</h1>
-                <p class="fs-5 text-body-secondary">Вы находитесь в разделе товары</p>
             </div>
         </header>
         <main>
