@@ -8,11 +8,11 @@ from catalog.views import contact, all_products, ProductListView, ProductDetailV
 app_name = CatalogConfig.name
 
 urlpatterns = [
-    path('', ProductListView.as_view(), name='index1'),
-    path('contacts/', contact),
-    path('products/', all_products, name='all_products'),
-    path('product/<pk>', ProductDetailView.as_view())
+    path('', ProductListView.as_view(), name='product_list'),
+    # path('create/', ProductListView.as_view(), name='index1'),
+
+    # path('contacts/', contact),
+    # path('products/', all_products, name='all_products'),
+    # path('product/<pk>', ProductDetailView.as_view())
 ]
 
-""" Добавляю следующий путь  path('',ProductListView.as_view(), name='index')
-и все данные с главной страницы пропадают"""

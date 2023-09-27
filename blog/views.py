@@ -10,8 +10,8 @@ class BlogListView(ListView):
     Контроллер для отображения всех постов блога на главной странице
     """
     model = Blog
-    template_name = 'blog/blog1_list.html'
-    context_object_name = 'objects_list'
+    # template_name = 'blog/blog_list.html'
+    # context_object_name: str = 'objects_list'
 
     # Выводим только те посты, у которых статус - опубликовано
 
@@ -106,7 +106,7 @@ class BlogDeleteView(DeleteView):
 #         'objects_list': posts
 #     }
 #
-#     return render(request, 'blog/blog1_list.html', context=context)
+#     return render(request, 'blog/blog_list.html', context=context)
 
 
 # def post_by_pk(request, pk):
@@ -124,7 +124,7 @@ class BlogDeleteView(DeleteView):
 #         'objects_list': products_list,
 #         'title': 'SkyStore'
 #     }
-#     return render(request, 'catalog/index1.html', context=context)
+#     return render(request, 'catalog/product_list.html', context=context)
 
 
 # class BlogCreateView(CreateView):
