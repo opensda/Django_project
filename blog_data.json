@@ -1,0 +1,28 @@
+[
+  {
+    "model": "blog.blog",
+    "pk": 24,
+    "fields": {
+      "title": "Lorem ipsum4ff",
+      "slug": "lorem-ipsum4ff",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "image": "",
+      "created_date": "2023-09-16",
+      "is_published": true,
+      "views_count": 21
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 37,
+    "fields": {
+      "title": "ТЕСТ СОЗДАНИЯ ПОСТА",
+      "slug": "test-sozdaniya-posta",
+      "content": "ТЕСТ СОЗДАНИЯ ПОСТА[[[[ff",
+      "image": "",
+      "created_date": "2023-09-18",
+      "is_published": true,
+      "views_count": 8
+    }
+  }
+]
