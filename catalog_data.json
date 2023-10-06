@@ -1,0 +1,75 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 16,
+    "fields": {
+      "category_name": "Кондитерка",
+      "description": "просто кондитерка"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 17,
+    "fields": {
+      "category_name": "Молочка",
+      "description": "просто молочка"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 18,
+    "fields": {
+      "category_name": "Спортивное питание",
+      "description": "Спортивное питание из Америки"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "product_name": "Soul Way Протеин сывороточный",
+      "description": "Сывороточный протеин от Soul Way 900г 30 порций со вкусом клубники из\r\nвысококачественного Европейского сырья КСБ (концентрат сывороточного белка). С высоким\r\nсодержанием белка, содержит сывороточный изолят, BCAA и минеральным комплексом (цинк, магний, селен, железо).",
+      "image": "products/Протеин.jpeg",
+      "category": 18,
+      "purchase_price": 1000.0,
+      "created_date": "2023-09-10",
+      "last_changed": "2023-09-10"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "product_name": "Креатин GLS!!!",
+      "description": "Креатин моногидрат, спортивное питание для набора массы и роста мышц, 150 г / 30 порций со вкусом «Цитрус»",
+      "image": "products/Креатин_Gls.jpg",
+      "category": 18,
+      "purchase_price": 1500.0,
+      "created_date": "2023-09-10",
+      "last_changed": "2023-09-10"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "product_name": "L-карнитин GLS",
+      "description": "L- Карнитин (L Carnitine), аминокислота для коррекции веса, 120 капсул",
+      "image": "products/l-КАРНИТИН.jpg",
+      "category": 18,
+      "purchase_price": 2000.0,
+      "created_date": "2023-09-10",
+      "last_changed": "2023-09-10"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 5,
+      "version_num": 1,
+      "version_name": "Первая версия",
+      "is_active": true
+    }
+  }
+]
