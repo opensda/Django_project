@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -27,13 +29,14 @@ class ProductDetailView(DetailView):
 
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:product_list')
 
 
-class ProductUpdateView(UpdateView):
+
+class ProductUpdateView(LoginRequiredMixin,UpdateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:product_list')
@@ -88,7 +91,7 @@ def all_products(request):
 
 
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     """
     Контроллер для удаления продукта
     """

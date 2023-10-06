@@ -38,6 +38,9 @@ class RegisterView(CreateView):
         user = form.save(commit=False)
         user.is_active = False  # Деактивируем пользователя
 
+        # Сохраняем пользователя
+        user.save()
+
         # Генерируем токен для верификации почты
 
         uid = urlsafe_base64_encode(force_bytes(user.pk))
@@ -119,18 +122,3 @@ def generate_new_password(request):
 
 
 
-# class RegisterView(CreateView):
-#     model = User
-#     form_class = UserRegisterForm
-#     success_url = reverse_lazy('users:login')
-#     template_name = 'users/register.html'
-#
-#     def form_valid(self, form):
-#         new_user = form.save()
-#         send_mail(
-#             subject='Интернет-магазин: подтверждение почты',
-#             message='Вы зарегистрировались на нашей платформе, просим Вас подтвердить почту ',
-#             from_email=settings.EMAIL_HOST_USER,
-#             recipient_list=[new_user.email]
-#         )
-#         return super().form_valid(form)
