@@ -1,8 +1,9 @@
 from django.urls import path
+from django.views.decorators.cache import cache_page
 
 from catalog.apps import CatalogConfig
 from catalog.views import contact, ProductListView, ProductDetailView, ProductCreateView, ProductUpdateView, \
-    ProductDeleteView
+    ProductDeleteView, categories
 
 # Настраиваем пути для главной страницы и страницы с обратной связью пользователя
 
@@ -15,7 +16,7 @@ urlpatterns = [
     path('delete/product/<int:pk>/', ProductDeleteView.as_view(), name='product_delete'),
 
     path('contacts/', contact),
-    # path('products/', all_products, name='all_products'),
-    path('product/<int:pk>', ProductDetailView.as_view())
+    path('categories/', categories, name='categories'),
+    path('product/<int:pk>',cache_page(60)(ProductDetailView.as_view()), name='product_detail')
 ]
 

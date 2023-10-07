@@ -1,12 +1,16 @@
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.cache import cache
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy
 
 from catalog.forms import ProductForm, VersionForm
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+
+from catalog.services import get_categories_cache
 
 
 class ProductListView(ListView):
@@ -99,6 +103,18 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
     context_object_name = 'product'
     pk_url_kwarg = 'pk'
     success_url = reverse_lazy('catalog:product_list')
+
+
+def categories(request):
+    '''
+    Контроллер для отображения категорий
+    '''
+
+    context = {
+        'object_list': get_categories_cache(),
+        'title': 'Категории продуктов интернет-магазина'
+    }
+    return render(request, 'catalog/categories.html', context)
 
 
 
